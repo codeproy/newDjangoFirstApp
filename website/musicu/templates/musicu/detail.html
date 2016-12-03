@@ -1,4 +1,4 @@
-{% extends 'music/base.html' %}
+{% extends 'musicu/base.html' %}
 
 {% block body %}
 
@@ -9,7 +9,7 @@
         <p>{{error_message}}</p>
     {% endif %}
 
-    <form action="{% url 'music:favorite' Album.id %}" method="post">
+    <form action="{% url 'musicu:favorite' Album.id %}" method="post">
         {%csrf_token%}
         {% for each_song in Album.song_set.all %}
             <input type="radio" id="song{{forloop.counter}}" name="song" value="{{each_song.id}}">
@@ -42,6 +42,7 @@
     <li>{{ each_song }}</li>
     {% endfor %}
 </ul> -->
+
 
 
 
